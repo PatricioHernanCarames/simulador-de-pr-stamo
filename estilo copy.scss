@@ -1,0 +1,32 @@
+body{
+    display: grid;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(170, 168, 214) 0%, rgb(81, 137, 216) 100%);
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(10, 10vh);
+    
+}
+header{
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+    align-content: center;
+}
+section{
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-content: center;
+
+
+
+}
+form{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border: 1px black solid;
+    border-radius: 2px;
+    
+}

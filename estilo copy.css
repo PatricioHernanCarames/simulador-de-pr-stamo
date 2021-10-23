@@ -1,0 +1,43 @@
+body {
+  display: -ms-grid;
+  display: grid;
+  background: #020024;
+  background: -webkit-gradient(linear, left top, right top, from(#aaa8d6), to(#5189d8));
+  background: linear-gradient(90deg, #aaa8d6 0%, #5189d8 100%);
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  -ms-grid-rows: (10vh)[10];
+      grid-template-rows: repeat(10, 10vh);
+}
+
+header {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+form {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  border: 1px black solid;
+  border-radius: 2px;
+}
+/*# sourceMappingURL=estilo.css.map */
