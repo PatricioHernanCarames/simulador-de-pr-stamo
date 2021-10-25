@@ -6,7 +6,7 @@ body {
   background: linear-gradient(90deg, #aaa8d6 0%, #5189d8 100%);
   -ms-grid-columns: 1fr 2fr 1fr;
       grid-template-columns: 1fr 2fr 1fr;
-  -ms-grid-rows: (10vh)[10];
+  -ms-grid-rows: (10vh);
       grid-template-rows: repeat(10, 10vh);
 }
 

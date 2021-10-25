@@ -66,7 +66,7 @@ Emprestito();
 
 let cuotasPrestamo = [];
 
-for(let i=0; i<=financiación; i++){
+for(let i=0; i<financiación; i++){
     cuotasPrestamo.push(cuota);
 
 
@@ -85,6 +85,34 @@ console.log(martaCliente.saldo);
 martaCliente.descCuota();
 
 console.log(martaCliente.saldo);
+
+
+
+
+function felicitaciones(){
+
+let felicitaciones = document.createElement("p");
+
+felicitaciones.innerHTML =" <h2>A la brevedad nos contactaremos contigo</h2>"; 
+
+felicitaciones.style.color = "red";
+
+felicitaciones.style.backgroundColor = "#d0c27b";
+
+felicitaciones.style.fontFamily = "verdana";
+
+felicitaciones.style.display = "flex";
+
+felicitaciones.style.alignItems = "center";
+
+felicitaciones.style.justifyContent = "center";
+
+
+
+
+
+document.body.appendChild(felicitaciones);
+}
 
 
 
