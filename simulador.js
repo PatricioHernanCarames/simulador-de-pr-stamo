@@ -1,4 +1,4 @@
-const ivA = 0.21;
+/*const ivA = 0.21;
 
 const interes = 0.0375;
 
@@ -45,13 +45,12 @@ let martinCliente = new Clientes(0002, "Martin Nieto", 17898436, 150000);
 
 
 
-
 function Emprestito(){
 
 
-monto=parseInt(prompt("ingrese el monto de su prestamo"));
+monto=parseInt(formulario.children[0].value);
 
-financiación=parseInt(prompt("ingrese el tiempo de financiacion en meses"));
+financiación=parseInt(formulario.children[1].value);
 
 
 prestamo=( monto +((interes*financiación)*monto));
@@ -62,8 +61,8 @@ cuota = cuota + cuota*ivA
      
 }
 
-Emprestito();
 
+function almacenarCuota(){
 let cuotasPrestamo = [];
 
 for(let i=0; i<financiación; i++){
@@ -72,21 +71,7 @@ for(let i=0; i<financiación; i++){
 
 
 }
-
-console.log(cuotasPrestamo);
-
-console.log(martaCliente.saldo);
-
-martaCliente.getPrestamo();
-
-console.log(martaCliente.saldo);
-
-
-martaCliente.descCuota();
-
-console.log(martaCliente.saldo);
-
-
+}
 
 
 function felicitaciones(){
@@ -114,14 +99,120 @@ felicitaciones.style.justifyContent = "center";
 document.body.appendChild(felicitaciones);
 }
 
+function almacenamiento(){
+    localStorage.setItem("martaCliente");//guarda el objeto en el local storage
+    localStorage.setItem("pabloCliente" );//guarda el objeto en el local storage
+    localStorage.setIem("javierCliente" );//guarda el objeto en el local storage
+    localStorage.setItem("sebastianCliente");//guarda el objeto en el local storage
+    
+
+}
+
+function mostrar(){
+    let clientes = JSON.parse(localStorage.getItem("martaCliente", "pabloCliente", 
+    "javierCliente", "sebastianCliente", "martinCliente"));
+    
+    console.log(clientes);
+}
+
+
+
+
+//codigo de prueba-->
+
+let miFormulario      = document.getElementById("formulario");
+  miFormulario.addEventListener("submit", validarFormulario, Emprestito, felicitaciones);
+  
+  function validarFormulario(e){
+      //Cancelamos el comportamiento del evento
+      e.preventDefault();
+      //Obtenemos el elemento desde el cual se disparó el evento
+      let formulario = e.target
+      //Obtengo el valor del primero hijo <input type="text">
+      console.log(formulario.children[0].value); 
+      //Obtengo el valor del segundo hijo <input type="number"> 
+      console.log(formulario.children[1].value); 
 
 
 
 
 
 
+  }*/
 
+let nombre="";
+let email="";
+let edad="";
+let montoPrestamo="";
+let tiempoFinanciacion="";
 
+function obtenerDatos(){
 
+     nombre = document.getElementById("name").value;
+     email = document.getElementById("email").value;
+     edad = document.getElementById("age").value;
+     montoPrestamo = document.getElementById("monto").value;
+     tiempoFinanciacion = document.getElementById("time").value;
 
+    
+    let datos = {
 
+        nombre : nombre,
+        email : email,
+        edad : edad,
+        montoPrestamo : montoPrestamo,
+        tiempoFinanciacion : tiempoFinanciacion
+
+  }
+     
+  console.log(datos);
+
+    localStorage.setItem("nombre", nombre );
+    localStorage.setItem("email", email );
+    localStorage.setItem("edad", edad );
+    localStorage.setItem("montoPrestamo", montoPrestamo );
+    localStorage.setItem("tiempoFinanciacion", tiempoFinanciacion );
+
+    localStorage.setItem("datos", JSON.stringify(datos));
+  
+  }
+
+function felicitaciones(){
+
+    let felicitaciones = document.createElement("p");
+    
+    felicitaciones.innerHTML =" <h2>A la brevedad nos contactaremos contigo</h2>"; 
+    
+    felicitaciones.style.color = "red";
+    
+    felicitaciones.style.backgroundColor = "#d0c27b";
+    
+    felicitaciones.style.fontFamily = "verdana";
+    
+    felicitaciones.style.display = "flex";
+    
+    felicitaciones.style.alignItems = "center";
+    
+    felicitaciones.style.justifyContent = "center";
+    
+    
+    
+    
+    
+    document.body.appendChild(felicitaciones);
+    }
+
+function verAlmacenamiento(){
+
+    let guardado =JSON.parse(localStorage.getItem("datos"))
+  
+    console.log(guardado);    
+}
+
+function limpiar(){
+        localStorage.clear();
+
+    }
+
+let boton = document.getElementById("boton");
+boton.addEventListener("click", obtenerDatos, verAlmacenamiento);

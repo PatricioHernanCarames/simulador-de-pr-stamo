@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <!--  meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="estilo.css">
     <title>Simulacion de prestamo</title>
   </head>
   <body>
-    <header>
+  <header>
       <h1 id="title">Bienvenido a nuestro simulador de prestamo</h1>
     </header>
     
@@ -20,23 +20,23 @@
         <p id="description">Acontinuacion te pediremos algunos datos</p>
     </section>
 
-    <form id="survey-form">
+    <form id="prestamo">
         
-        <div  class=" form-group input-group">
+        <div  class="mb-3 form-group">
             <label id="name-label" for="name" class="form-label" >Nombre</label>
-            <input type="text"  id="name" aria-label="Full name" class="form-control" placeholder="Ingresa tu Nombre" required>            
+            <input type="text"  id="name" aria-label="Full name" class="form-control" placeholder="Ingresa tu Nombre" >            
           </div>
         
        
         <div class="mb-3 form-group">
           <label id="email-label" for="email" class="form-label">Email address</label>
-          <input  type="email" name="email" id="email" class="form-control"   placeholder="Ingresá tu Email" required="">
+          <input  type="email" name="email" id="email" class="form-control"   placeholder="Ingresá tu Email" >
           
         </div>
                 
           <div  class="mb-3 form-group">
             <label id="number-label" class="form-check-label" for="exampleCheck1">Edad(debes ser mayor de 18)</label>
-          <input id="number" type="number" class="form-control" min="18" max="100" placeholder="Edad" >
+          <input id="age" type="number" class="form-control" min="18" max="100" placeholder="Edad" >
         </div>
         
         <div>
@@ -59,27 +59,27 @@
 
         <div  class="mb-3 form-group">
           <label id="number-label" class="form-check-label" for="exampleCheck1">Ingreso mensual promedio(requerido)</label>
-        <input id="number" type="number" class="form-control" min="18" max="100" placeholder="$" >
+        <input id="ingreso" type="number" class="form-control"  placeholder="$" >
       </div>
 
-      <div  class="mb-3 form-group">
+      <div id=""  class="mb-3 form-group">
         <label id="number-label" class="form-check-label" for="exampleCheck1">Monto del prestamo</label>
-      <input id="number" type="number" class="form-control" min="18" max="100" placeholder="$" >
+      <input id="monto" type="number" class="form-control" placeholder="$" >
     </div>
 
-    <div  class="mb-3 form-group">
-      <label id="number-label" class="form-check-label" for="exampleCheck1">tiempo de financiación</label>
-    <input id="number" type="number" class="form-control" min="18" max="100" placeholder="$" >
+    <div id="financiación"  class="mb-3 form-group">
+      <label id="class="form-check-label" for="exampleCheck1">tiempo de financiación</label>
+    <input id="time" type="number" class="form-control"  placeholder="$" >
   </div>
 
   <div  class="mb-3 form-group">
     <label id="number-label" class="form-check-label" for="exampleCheck1">Costo final</label>
-  <input id="number" type="number" class="form-control" min="18" max="100" placeholder="Edad" >
+  <input id="number" type="number" class="form-control"  placeholder="Edad" >
 </div>
 
 <div  class="mb-3 form-group">
   <label id="number-label" class="form-check-label" for="exampleCheck1">Valor de la cuota</label>
-<input id="number" type="number" class="form-control" min="18" max="100" placeholder="$" >
+<input id="number" type="number" class="form-control"  placeholder="$" >
 </div>
 
         
@@ -88,9 +88,23 @@
             <label for="floatingTextarea">Comments</label>
           </div>
 
+          </form>
+
+      <footer>
+
+        <div>
+          <button id="boton">Calcular Prestamo</button>
         </div>
-        <button id="submit" type="submit" class="btn btn-primary" onclick="felicitaciones()">Enviar</button>
-      </form>
+
+      <div>
+       <button id="submit" type="submit" class="btn btn-primary" onclick="felicitaciones()">Enviar</button>
+      </div>
+
+
+      </footer>
+
+
+      
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
