@@ -177,13 +177,24 @@ function obtenerDatos(){
   
   }
 
-function felicitaciones(){
+  function felicitaciones(){
 
-    let felicitaciones = document.createElement("p");
+    let felicitaciones = document.createElement("div");
     
-    felicitaciones.innerHTML =" <h2>A la brevedad nos contactaremos contigo</h2>"; 
+    felicitaciones.innerHTML = 
+
+    `<div class="card">
+  <h5 class="card-header">En hora buena!</h5>
+  <div class="card-body">
+    <h5 class="card-title">Tu credito ha sido aprobado</h5>
+    <p class="card-text">Gracias por elegirnos, nos contactaremos contigo a la brevedad</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>`;
+
+
     
-    felicitaciones.style.color = "red";
+    /*felicitaciones.style.color = "red";
     
     felicitaciones.style.backgroundColor = "#d0c27b";
     
@@ -195,6 +206,7 @@ function felicitaciones(){
     
     felicitaciones.style.justifyContent = "center";
     
+    felicitaciones.style.gridColumnStart;*/
     
     
     
@@ -214,5 +226,21 @@ function limpiar(){
 
     }
 
+
+    
+    function calcular(){
+
+        let sueldo= parseInt(montoPrestamo*3);
+
+        let ingreso = document.getElementById("ingreso").value;
+
+        ingreso.innerHTML = sueldo;
+
+
+    }
+
 let boton = document.getElementById("boton");
-boton.addEventListener("click", obtenerDatos, verAlmacenamiento);
+boton.addEventListener("click", obtenerDatos, verAlmacenamiento, calcular);
+
+let boton2 = document.getElementById("boton2");
+boton.addEventListener("enter", felicitaciones);

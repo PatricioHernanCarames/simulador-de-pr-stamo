@@ -15,26 +15,23 @@
       <h1 id="title">Bienvenido a nuestro simulador de prestamo</h1>
     </header>
     
-    <section >
-
-        <p id="description">Acontinuacion te pediremos algunos datos</p>
-    </section>
-
-    <form id="prestamo">
+    <section class="formulario">
+    
+      <form id="prestamo">
         
-        <div  class="mb-3 form-group">
+        <div  class="mb-1 form-group">
             <label id="name-label" for="name" class="form-label" >Nombre</label>
             <input type="text"  id="name" aria-label="Full name" class="form-control" placeholder="Ingresa tu Nombre" >            
           </div>
         
        
-        <div class="mb-3 form-group">
+        <div class="mb-1 form-group">
           <label id="email-label" for="email" class="form-label">Email address</label>
           <input  type="email" name="email" id="email" class="form-control"   placeholder="Ingresá tu Email" >
           
         </div>
                 
-          <div  class="mb-3 form-group">
+          <div  class="mb-1 form-group">
             <label id="number-label" class="form-check-label" for="exampleCheck1">Edad(debes ser mayor de 18)</label>
           <input id="age" type="number" class="form-control" min="18" max="100" placeholder="Edad" >
         </div>
@@ -57,38 +54,34 @@
         
         
 
-        <div  class="mb-3 form-group">
-          <label id="number-label" class="form-check-label" for="exampleCheck1">Ingreso mensual promedio(requerido)</label>
-        <input id="ingreso" type="number" class="form-control"  placeholder="$" >
+        <div  class="mb-1 form-group">
+          <label id="number-label" class="form-check-label" for="exampleCheck1">Ingreso mensual minimo requerido</label>
+        <input id="ingreso" type="number" class="form-control"  placeholder="$"  value="git" >
       </div>
 
-      <div id=""  class="mb-3 form-group">
+      <div id=""  class="mb-1 form-group">
         <label id="number-label" class="form-check-label" for="exampleCheck1">Monto del prestamo</label>
       <input id="monto" type="number" class="form-control" placeholder="$" >
     </div>
 
-    <div id="financiación"  class="mb-3 form-group">
+    <div id="financiación"  class="mb-1 form-group">
       <label id="class="form-check-label" for="exampleCheck1">tiempo de financiación</label>
     <input id="time" type="number" class="form-control"  placeholder="$" >
   </div>
 
-  <div  class="mb-3 form-group">
+  <div  class="mb-1 form-group">
     <label id="number-label" class="form-check-label" for="exampleCheck1">Costo final</label>
   <input id="number" type="number" class="form-control"  placeholder="Edad" >
 </div>
 
-<div  class="mb-3 form-group">
+<div  class="mb-1 form-group">
   <label id="number-label" class="form-check-label" for="exampleCheck1">Valor de la cuota</label>
 <input id="number" type="number" class="form-control"  placeholder="$" >
 </div>
+</section>
 
         
-          <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Comments</label>
-          </div>
-
-          </form>
+  
 
       <footer>
 
@@ -97,7 +90,7 @@
         </div>
 
       <div>
-       <button id="submit" type="submit" class="btn btn-primary" onclick="felicitaciones()">Enviar</button>
+       <button id="boton2" type="submit" class="btn btn-primary">Enviar</button>
       </div>
 
 
