@@ -243,4 +243,4 @@ let boton = document.getElementById("boton");
 boton.addEventListener("click", obtenerDatos, verAlmacenamiento, calcular);
 
 let boton2 = document.getElementById("boton2");
-boton.addEventListener("enter", felicitaciones);
+boton.addEventListener("click", felicitaciones);
