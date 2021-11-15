@@ -1,0 +1,46 @@
+@keyframes "fadeOut" {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(0,5vh);
+	}
+}
+body{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+main {
+	form {
+		display: flex;
+		flex-direction: column;
+        align-items: center;
+	}
+}
+label {
+	margin: 5vh 0;
+}
+button {
+	width: 20vw;
+}
+.alert {
+	opacity: 0;
+	position: absolute;
+	top: 40vh;
+	left: 40vw;
+	border: 2px black solid;
+	background-color: bisque;
+}
+.alertAnim {
+	animation: fadeOut 1s backwards;
+}
+.dangerAlert {
+	opacity: 0;
+	background-color: red;
+	border: 2px black solid;
+}
+.showDanger {
+	opacity: 1;
+}

@@ -1,0 +1,181 @@
+body {
+  height: auto;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: 30% 70% 30%;
+      grid-template-rows: 30% 70% 30%;
+      grid-template-areas: "header header" "main form" "footer footer";
+  background-color: rgba(230, 223, 169, 0.562);
+  grid-gap: 1rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main img {
+  width: auto;
+  height: 100%;
+}
+
+form {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: form;
+}
+
+form div input {
+  border: 1px solid grey;
+  border-radius: 3px;
+  height: 2rem;
+  background-color: #f5f5f5;
+}
+
+form button {
+  margin-top: 0.5em;
+  background-color: #001aff;
+  color: white;
+  border-radius: 0.5em;
+  height: 3em;
+  width: 7em;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
+}
+
+.flexing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 2rem;
+  width: 25%;
+}
+
+.flexing2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  height: 2rem;
+  width: 25%;
+}
+
+.griding {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1;
+      grid-template-rows: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  main {
+    display: none;
+  }
+}
+
+.alert {
+  opacity: 0;
+  position: absolute;
+  top: 40vh;
+  left: 40vw;
+  border: 2px black solid;
+  background-color: bisque;
+}
+
+.alertAnim {
+  -webkit-animation: fadeOut 1s backwards;
+          animation: fadeOut 1s backwards;
+}
+
+.dangerAlert {
+  opacity: 0;
+  background-color: red;
+  border: 2px black solid;
+}
+
+.showDanger {
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

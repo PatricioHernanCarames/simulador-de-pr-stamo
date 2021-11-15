@@ -1,115 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--  meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilo.css">
-    <title>Simulacion de prestamo</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;500&display=swap" rel="stylesheet">
+    <title>Document</title>
   </head>
   <body>
-  <header>
-      <h1 id="title">Bienvenido a nuestro simulador de prestamo</h1>
+    <header>
+        <h1>simulá tu prestamo</h1>
     </header>
+    <main>
+
+        <img src="../nueva prueba/assets/PRESTAMO.jpg" alt="">
+
+    </main>
     
-    <section class="formulario">
+    <div class="alert">
+        <h2>FELICITACIONES DEUDOR</h2>
+        <p>Nombre</p>
+        <p>Apellido</p>
+        <p>Edad</p>
+        <p>Monto</p>
+        <p>Cuotas</p>
+        <p>documento</p>
+        <p>Email</p>
+        <p>Telefono</p>
+        <p>Tenemos tu alma</p>
+        <button id="btn0">Cerrar</button>
+    </div>
     
-      <form id="prestamo">
-        
-        <div  class="mb-1 form-group">
-            <label id="name-label" for="name" class="form-label" >Nombre</label>
-            <input type="text"  id="name" aria-label="Full name" class="form-control" placeholder="Ingresa tu Nombre" >            
-          </div>
-        
-       
-        <div class="mb-1 form-group">
-          <label id="email-label" for="email" class="form-label">Email address</label>
-          <input  type="email" name="email" id="email" class="form-control"   placeholder="Ingresá tu Email" >
-          
-        </div>
-                
-          <div  class="mb-1 form-group">
-            <label id="number-label" class="form-check-label" for="exampleCheck1">Edad(debes ser mayor de 18)</label>
-          <input id="age" type="number" class="form-control" min="18" max="100" placeholder="Edad" >
-        </div>
-        
+    <form action="">
+      <div>
+        <label for="">Monto del prestamo</label>
+        <input type="number" placeholder="1000" />
+      </div>
+      <div>
+        <label for="">Cantidad de cuotas</label>
+        <input type="number" />
+      </div>
+      <div class="griding">
         <div>
-
-          <div id="dropdown" class="form-floating">
-            <select  class="form-select" id="floatingSelect" aria-label="Floating label select example">
-              <option selected>Elige tu ocupación</option>
-              <option value="1">Estudiante</option>
-              <option value="2">Estudiante full Time</option>
-              <option value="3">Trabajador Full Time</option>
-              <option value="2">Prefiero Reservarmelo</option>
-              <option value="3">otro</option>
-            </select>
-            <label  for="floatingSelect">Selecciona tu ocupación</label>
-          </div>
-
+          <label for="">Nombre</label>
+          <input type="text" placeholder="Juan" />
         </div>
-        
-        
-
-        <div  class="mb-1 form-group">
-          <label id="number-label" class="form-check-label" for="exampleCheck1">Ingreso mensual minimo requerido</label>
-        <input id="ingreso" type="number" class="form-control"  placeholder="$"  value="git" >
+        <div>
+          <label for="">Apellido</label>
+          <input type="text" placeholder="Gonzalez" />
+        </div>
+      </div>
+      <div class="griding">
+        <div>
+          <label for="">Edad</label>
+          <input type="number" placeholder="Debes ser mayor de 18 años" />
+        </div>
+        <div>
+          <label for="">Documento</label>
+          <input type="number" placeholder="D.N.I." />
+        </div>
       </div>
 
-      <div id=""  class="mb-1 form-group">
-        <label id="number-label" class="form-check-label" for="exampleCheck1">Monto del prestamo</label>
-      <input id="monto" type="number" class="form-control" placeholder="$" >
+      <div class="griding">
+        <div>
+          <label for="">Email</label>
+          <input type="email" placeholder="example@example.some" />
+        </div>
+        <div>
+          <label for="">Telefono</label>
+          <input type="email" placeholder="" />
+        </div>
+      </div>
+
+      <div class="dangerAlert" >
+        <h2>No calificas para recibir un prestamo</h2>
     </div>
 
-    <div id="financiación"  class="mb-1 form-group">
-      <label id="class="form-check-label" for="exampleCheck1">tiempo de financiación</label>
-    <input id="time" type="number" class="form-control"  placeholder="$" >
-  </div>
-
-  <div  class="mb-1 form-group">
-    <label id="number-label" class="form-check-label" for="exampleCheck1">Costo final</label>
-  <input id="number" type="number" class="form-control"  placeholder="Edad" >
-</div>
-
-<div  class="mb-1 form-group">
-  <label id="number-label" class="form-check-label" for="exampleCheck1">Valor de la cuota</label>
-<input id="number" type="number" class="form-control"  placeholder="$" >
-</div>
-</section>
-
-        
-  
-
-      <footer>
-
-        <div>
-          <button id="boton">Calcular Prestamo</button>
-        </div>
-
       <div>
-       <button id="boton2" type="submit" class="btn btn-primary">Enviar</button>
+        <button>Enviar</button>
       </div>
+      <div class="flexing">
+        <div class="flexing2">
 
+          <input type="checkbox"><span>Aceptas los terminos y condiciones</span>
+        </div>
+      </div>
+    </form>
+    <footer>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi esse officia qui. Natus, quaerat! Accusamus reiciendis aliquid quasi placeat quia quam in sint, libero inventore quibusdam autem quod obcaecati quas corrupti excepturi. Quam, id velit! Laborum quidem, magni officia unde exercitationem assumenda dolor totam accusantium eaque ipsam harum, sequi suscipit.</footer>
 
-      </footer>
-
-
-      
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-    -->
-
-    <script src="simulador.js"></script>
+    <script src="main.js"></script>
 
   </body>
 </html>

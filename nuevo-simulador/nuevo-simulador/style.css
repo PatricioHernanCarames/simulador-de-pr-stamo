@@ -1,0 +1,72 @@
+@-webkit-keyframes "fadeOut" {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, 5vh);
+            transform: translate(0, 5vh);
+  }
+}
+
+@keyframes "fadeOut" {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, 5vh);
+            transform: translate(0, 5vh);
+  }
+}
+
+body {
+  background: #eeaeca;
+  background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
+}
+
+main form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+label {
+  margin: 5vh 0;
+}
+
+button {
+  width: 20vw;
+}
+
+.alert {
+  opacity: 0;
+  position: absolute;
+  top: 40vh;
+  left: 40vw;
+  border: 2px black solid;
+  background-color: bisque;
+}
+
+.alertAnim {
+  -webkit-animation: fadeOut 1s backwards;
+          animation: fadeOut 1s backwards;
+}
+
+.dangerAlert {
+  opacity: 0;
+  background-color: red;
+  border: 2px black solid;
+}
+
+.showDanger {
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */
