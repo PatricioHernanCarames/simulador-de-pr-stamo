@@ -5,9 +5,9 @@ body {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: 30% 70% 30%;
-      grid-template-rows: 30% 70% 30%;
-      grid-template-areas: "header header" "main form" "footer footer";
+  -ms-grid-rows: 30% 10vh 70% 30%;
+      grid-template-rows: 30% 10vh 70% 30%;
+      grid-template-areas: "header header" "nav nav" "main form" "footer footer";
   background-color: rgba(230, 223, 169, 0.562);
   grid-gap: 1rem;
   font-family: 'Outfit', sans-serif;
@@ -30,8 +30,22 @@ header {
   font-size: 2rem;
 }
 
-main {
+nav {
   -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: nav;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: main;
   display: -webkit-box;
@@ -51,7 +65,7 @@ main img {
 }
 
 form {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: form;
 }
@@ -88,7 +102,7 @@ div {
 }
 
 footer {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: footer;
@@ -164,11 +178,6 @@ footer {
   background-color: bisque;
 }
 
-.alertAnim {
-  -webkit-animation: fadeOut 1s backwards;
-          animation: fadeOut 1s backwards;
-}
-
 .dangerAlert {
   opacity: 0;
   background-color: red;
@@ -177,5 +186,59 @@ footer {
 
 .showDanger {
   opacity: 1;
+}
+
+.alertAnim {
+  -webkit-animation: fadeOut 1s forwards;
+          animation: fadeOut 1s forwards;
+}
+
+.alertaFadeIn {
+  -webkit-animation: fadeIn 1s forwards;
+          animation: fadeIn 1s forwards;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, 5vh);
+            transform: translate(0, 5vh);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, 5vh);
+            transform: translate(0, 5vh);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, -5vh);
+            transform: translate(0, -5vh);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, -5vh);
+            transform: translate(0, -5vh);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */
