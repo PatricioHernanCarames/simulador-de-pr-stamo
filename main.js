@@ -15,7 +15,7 @@ let buttons = document.querySelectorAll("button");
 let alerta = document.querySelector(".alert");
 let danger = document.querySelector(".dangerAlert");
 let dolar = document.querySelector(".dolar");
-let urlJSON = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
+let urlDolar = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
 
 
 // General
@@ -65,16 +65,33 @@ function showAlerta(nuevoCliente) {
   }
   alerta.style.opacity = 1;
 }
-$(buttons[2]).click(function () {
-  $.get(urlJSON, function (datos, ) {
 
-   let it = 1;
-    for (prop in datos) {
-      console.log(datos[prop]);
+
+
+
+$(buttons[2]).click(function () {
+ //let dolar=querySelector(".dolar");
+
+  $.get(urlDolar, function (datos) {
+    
+    let dolarOfCompra;
+    let dolarOfVenta;
+    for (let i = 0; i < datos.length; i++) {
       
-      dolar.children[it].textContent = datos[prop];
-     
-      it++;
+      for (let valor in datos[0]) {
+        
+        dolarOfCompra = datos[0][valor]["compra"];
+        dolarOfVenta = datos[0][valor]["venta"];
+      }
     }
+    console.log(dolarOfCompra);
+    console.log(dolarOfVenta);
+
+    $(".DC").html("Dolar oficial compra: " + dolarOfCompra);
+    $(".DV").html("Dolar oficial venta: " + dolarOfVenta);
+    
+
   });
 });
+
+ 
