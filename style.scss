@@ -3,7 +3,7 @@ body{
     width: 100vw;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 30% 10vh 70% 30%;
+    grid-template-rows: 10% 5vh 70% 30%;
     
     grid-template-areas:
         "header header"
@@ -11,7 +11,7 @@ body{
         "main form"
         "footer footer";
         
-    background-color: rgba(230, 223, 169, 0.562);
+    background-color: #5C7AEA;
     grid-gap: 1rem;
     font-family: 'Outfit', sans-serif;
 
@@ -33,12 +33,14 @@ nav{
 }
 main{
     grid-area: main;
-    display: flex;
+     display: flex;
+    
     justify-content: center;
     align-items: center;
+    align-content: flex-start;
     img{
-        width: auto;
-        height: 100%;
+        width: 50vw;
+        height: auto;
 
     }
 }
@@ -59,7 +61,7 @@ form{
     }
     button{
         margin-top: 0.5em;
-        background-color: rgb(0, 26, 255);
+        background-color: #14279B;
         color: white;        
         border-radius: 0.5em;
         height: 3em;
@@ -125,7 +127,7 @@ footer{
 	top: 40vh;
 	left: 40vw;
 	border: 2px black solid;
-	background-color: bisque;
+	background-color: #CFC5A5;
 }
 .dangerAlert {
 	opacity: 0;
