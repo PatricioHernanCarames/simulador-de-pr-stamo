@@ -78,7 +78,7 @@ function showAlerta(nuevoCliente) {
   alerta.style.opacity = 1;
 }
 
-$(buttons[2]).click(function () {
+function displayDolar() {
   $.get(urlDolar, function (datos) {
     let dolarOfCompra;
     let dolarOfVenta;
@@ -94,7 +94,8 @@ $(buttons[2]).click(function () {
     $(".DC").html("Dolar oficial compra: " + dolarOfCompra);
     $(".DV").html("Dolar oficial venta: " + dolarOfVenta);
   });
-});
+};
+displayDolar();
 // calculador de prestamo
 function calcularPrestamo() {}
 $(".btn").click(calcularPrestamo());
