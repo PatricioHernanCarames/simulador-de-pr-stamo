@@ -1,119 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--- css personalizado -->
     <link rel="stylesheet" href="style.css" />
+
+    <!--Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;500&display=swap"  rel="stylesheet"/>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"    ></script>
-    <link rel="stylesheet" media="(max-width: 1000px)" href="style.css" />
-    <title>Document</title>
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;500&display=swap" rel="stylesheet" />
+
+    <!-- Jquery link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <title> A tuy prestamo.com/simulador de prestamo</title>
+</head>
+
+
+<body>
     <header>
-      <h1>simulá tu prestamo</h1>
+        <h1>Simulá tu prestamo on-line</h1>
+        <h6> y accedé a tus deseos </h2>
+            <img class="image" src="../desafio del curso v2/assets/prestamos_slider_1360x400_2.jpg" class="img-fluid"
+                alt="motivational image">
     </header>
-    <nav>
-      <ul>
-        <li><p class="DC">Dolar oficial Compra: ""</p></li>
-        
-        <li><p class="DV">Dolar oficial Venta : ""</p></li>
-      </ul>
-    </nav>
+
+
+    <hr>
+
     <main>
-      <img src="assets/PRESTAMO2.jpg" alt="" />
+
+        <section>
+
+            <form class="container-form">
+
+                <div class="item-form">
+                    <label for="">Monto del prestamo</label>
+
+                    <input type="number" placeholder="1000" />
+                </div>
+
+                <div class="item-form">
+                    <label for="">Cantidad de cuotas</label>
+                    <select id="plazosSelect" name="plazo" class="">
+                        <option value="12">12 meses</option>
+                        <option value="18">18 meses</option>
+                        <option value="24">24 meses</option>
+                        <option value="36">36 meses</option>
+                        <option value="48">48 meses</option>
+                        <option value="60">60 meses</option>
+                        <option value="72">72 meses</option>
+                        <option value="84">84 meses</option>
+                        <option value="96">96 meses</option>
+                    </select>
+                </div>
+
+
+                <div class="item-form">
+                    <label for="">Nombre</label>
+                    <input type="text" placeholder="Juan" />
+                </div>
+
+                <div class="item-form">
+                    <label for="">Apellido</label>
+                    <input type="text" placeholder="Gonzalez" />
+                </div>
+
+
+
+                <div class="item-form">
+                    <label for="">Edad</label>
+                    <input type="number" placeholder="Debes ser mayor de 18 años" />
+                </div>
+
+                <div class="item-form">
+                    <label for="">Documento</label>
+                    <input type="number" placeholder="D.N.I." />
+                </div>
+
+
+
+                <div class="item-form">
+                    <label for="">Email</label>
+                    <input type="email" placeholder="example@example.some" />
+                </div>
+
+                <div class="item-form">
+                    <label for="">Telefono</label>
+                    <input type="number" placeholder="011-2233-4455" />
+                </div>
+
+
+                <div class="dangerAlert">
+
+                </div>
+
+                <div class="checkBox">
+                    <input class="terminos" type="checkbox" value="false" />
+                    <a href="../desafio del curso v2/assets/terminos y condiciones.pdf">Aceptas los terminos y
+                        condiciones</a>
+                </div>
+
+
+                <div id=boton>
+                    <button class="btn" href="#loanBanner">Enviar</button>
+                </div>
+
+
+                <div id="loanBanner" class="alert">
+                    <button class="btn" id="btn0"></button>
+                </div>
+
+
+            </form>
+
+        </section>
+
+        <hr>
+
+        <aside class="dolarAhora">
+            <div class="card">
+                <img src=" assets/Dolar.jfif" class="card-img-top" alt="Foto de dolar">
+                <div class="card-body">
+                    <h5 class="card-title">Cotización actual del dolar</h5>
+
+                </div>
+                
+
+                    <ul class="list-group list-group-flush">
+                        <li class=" DV list-group-item">An item</li>
+                        <li class="  DC list-group-item">A second item</li>
+                        <li class=" DVb list-group-item">A third item</li>
+                        <li class=" DCb list-group-item">A fourth item</li>
+
+                    </ul>
+            
+            </div>
+        </aside>
     </main>
 
-    <div class="alert">
-      <h2>FELICITACIONES DEUDOR</h2>
-      <p>Nombre</p>
-      <p>Apellido</p>
-      <p>Edad</p>
-      <p>Monto</p>
-      <p>Cuotas</p>
-      <p>documento</p>
-      <p>Email</p>
-      <p>Telefono</p>
 
-      <button id="btn0">Cerrar</button>
-    </div>
 
-    <form action="">
-      <div>
-        <label for="">Monto del prestamo</label>
-        <input type="number" placeholder="1000" />
-      </div>
-      <div>
-        <label for="" min="1" >Cantidad de cuotas</label>
-        <input type="number" />
-      </div>
-      <div class="griding">
-        <div>
-          <label for="">Nombre</label>
-          <input type="text" placeholder="Juan" />
-        </div>
-        <div>
-          <label for="">Apellido</label>
-          <input type="text" placeholder="Gonzalez" />
-        </div>
-      </div>
-      <div class="griding">
-        <div>
-          <label for="">Edad</label>
-          <input type="number" placeholder="Debes ser mayor de 18 años" />
-        </div>
-        <div>
-          <label for="">Documento</label>
-          <input type="number" placeholder="D.N.I." />
-        </div>
-      </div>
 
-      <div class="griding">
-        <div>
-          <label for="">Email</label>
-          <input type="email" placeholder="example@example.some" />
-        </div>
-        <div>
-          <label for="">Telefono</label>
-          <input type="email" placeholder="" />
-        </div>
-      </div>
+    <!-- Optional JavaScript; choose one of the two! -->
 
-      <div class="dangerAlert">
-        <h2>No calificas para recibir un prestamo</h2>
-      </div>
-      
-     
-        <div>
-          <button class="btn">Enviar</button>
-        </div>
-      </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
-      
-        <div class="griding checkBox">
-          <input class="" type="checkbox" />
-          <p>Aceptas los terminos y condiciones</p>
-        </div>
-      
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
 
-    </form>
-    <footer>
-      <p>Exclusivo para personas humanas. El otorgamiento del crédito se encuentra sujeto a evaluación crediticia y 
-        condiciones de contratación de Santander Consumer S.A. CUIT 30-64922210-6, domicilio en Av. Juan de Garay N° 
-        151 Piso 9, C.A.B.A. Condiciones vigentes por el día de la fecha. Santander Consumer S.A. no es una entidad
-         financiera y realiza sus operaciones con fondos propios. Ni otras entidades ni sus socios que utilicen la m
-         arca Santander responden por las operaciones de Santander Consumer S.A.En todos los casos, las tasas y el 
-         Costo Financiero Total (CFT) dependerán del análisis crediticio del solicitante, el plazo de financiación 
-         elegido y el canal de solicitud del préstamo y serán informados al momento de solicitar el préstamo y antes 
-         de su otorgamiento. Monto mínimo: $ 3.000. Plazo mínimo: 6 meses. Plazo máximo: 30 meses. Tasa Fija Efectiva 
-         Anual: mínima 142,5% y máxima 253% - Costo Financiero Total calculada en TNA (CFTNA):CFTEA mín 189,81% y máx 352,83% 
-         Tasa Nominal Anual: mínima 91,90% y máxima 132,90%. Sistema de amortización francés.
-      </p>
-     
-    </footer>
-
+    <!-- link JavaScript -->
     <script src="main.js"></script>
-  </body>
+</body>
+
 </html>

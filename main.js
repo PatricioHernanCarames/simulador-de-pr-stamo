@@ -16,9 +16,15 @@ let alerta = document.querySelector(".alert");
 let danger = document.querySelector(".dangerAlert");
 let dolar = document.querySelector(".dolar");
 let urlDolar = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
+let terminos = document.querySelector(".terminos");
+
 
 // General
-buttons[1].addEventListener("click", (e) => {
+
+
+
+
+buttons[0].addEventListener("click", (e) => {
   alerta.classList.add("alertaFadeIn");
   alerta.classList.toggle("alertAnim");
 
@@ -34,8 +40,10 @@ buttons[1].addEventListener("click", (e) => {
   );
   sessionStorage.prestamo = JSON.stringify(cliente);
   let edad = parseInt(inputs[4].value);
+if(terminos.checked){
 
   if (edad > 17) {
+    
     danger.style.opacity = 0;
 
     showAlerta(cliente);
@@ -43,30 +51,49 @@ buttons[1].addEventListener("click", (e) => {
     console.log(cliente);
   } else {
     danger.style.opacity = 1;
+    $(".dangerAlert").html(`<h2>` + "No calificas para recibir un prestamo" + `</h2>`);
   }
+}else{
+
+  danger.style.opacity = 1;
+  $(".dangerAlert").html(`<h2>` + "Acepte los terminos y condiciones" + `</h2>`);
+
+}
 
   let cuota = parseInt(inputs[1].value);
   let monto = parseInt(inputs[0].value);
-  console.log(cuota);
-  console.log(monto);
+  let interes = 1+(cuota*6.00033)/100;
   
-  let costoFinal= monto*1.7*1.21;
+  
+  let costoFinal= monto*interes*1.21;
   
   let cuotaPrestamo = costoFinal/cuota;
-  console.log(costoFinal);
-  console.log(cuotaPrestamo);
+  
   $(".alert").append(`<p>Tu cuota mensual es de ${cuotaPrestamo} $</p>`);
   $(".alert").append(`<p>El costo total de tu prestamo es de ${costoFinal} $</p>`);
   
 });
 
-buttons[0].addEventListener("click", () => {
+buttons[1].addEventListener("click", () => {
   alerta.classList.toggle("alertaFadeIn");
   alerta.classList.add("alertAnim");
 });
 
 // Funciones
 function showAlerta(nuevoCliente) {
+
+  $(".alert").html(`<h2>FELICITACIONES</h2>
+  <p>Nombre</p>
+  <p>Apellido</p>
+  <p>Edad</p>
+  <p>Monto</p>
+  <p>Cuotas</p>
+  <p>documento</p>
+  <p>Email</p>
+  <p>Telefono</p>
+
+  <button class="btn" id="btn0">Cerrar</button>`);
+
   let it = 1;
   for (prop in nuevoCliente) {
     console.log(nuevoCliente[prop]);
@@ -83,19 +110,23 @@ function displayDolar() {
     let dolarOfCompra;
     let dolarOfVenta;
     for (let i = 0; i < datos.length; i++) {
-      for (let valor in datos[0]) {
+      for (let valor in datos[i]) {
         dolarOfCompra = datos[0][valor]["compra"];
         dolarOfVenta = datos[0][valor]["venta"];
+        dolarBlueVenta = datos[1][valor]["venta"];
+        dolarBlueCompra = datos[1][valor]["compra"];
       }
     }
-    console.log(dolarOfCompra);
-    console.log(dolarOfVenta);
+    
 
     $(".DC").html("Dolar oficial compra: " + dolarOfCompra);
     $(".DV").html("Dolar oficial venta: " + dolarOfVenta);
+    $(".DVb").html("Dolar Blue venta: " + dolarBlueVenta);
+    $(".DCb").html("Dolar Blue compra: " + dolarBlueCompra);
   });
 };
 displayDolar();
 // calculador de prestamo
 function calcularPrestamo() {}
 $(".btn").click(calcularPrestamo());
+
