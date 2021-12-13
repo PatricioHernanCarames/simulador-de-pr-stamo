@@ -18,11 +18,7 @@ let dolar = document.querySelector(".dolar");
 let urlDolar = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
 let terminos = document.querySelector(".terminos");
 
-
 // General
-
-
-
 
 buttons[0].addEventListener("click", (e) => {
   alerta.classList.add("alertaFadeIn");
@@ -36,42 +32,70 @@ buttons[0].addEventListener("click", (e) => {
     inputs[3].value,
     inputs[4].value,
     inputs[5].value,
-    inputs[6].value
+    inputs[6].value,
+    inputs[7].value
   );
   sessionStorage.prestamo = JSON.stringify(cliente);
   let edad = parseInt(inputs[4].value);
-if(terminos.checked){
-
-  if (edad > 17) {
-    
-    danger.style.opacity = 0;
-
-    showAlerta(cliente);
-
-    console.log(cliente);
-  } else {
-    danger.style.opacity = 1;
-    $(".dangerAlert").html(`<h2>` + "No calificas para recibir un prestamo" + `</h2>`);
-  }
-}else{
-
-  danger.style.opacity = 1;
-  $(".dangerAlert").html(`<h2>` + "Acepte los terminos y condiciones" + `</h2>`);
-
-}
-
   let cuota = parseInt(inputs[1].value);
   let monto = parseInt(inputs[0].value);
-  let interes = 1+(cuota*6.00033)/100;
   
   
-  let costoFinal= monto*interes*1.21;
   
-  let cuotaPrestamo = costoFinal/cuota;
   
+  if (terminos.checked) {
+
+    if(monto>2999){
+  
+      if(cuota>5){
+  
+        if(edad>17){
+  
+          danger.style.opacity = 0;
+          showAlerta(cliente);
+          console.log(cliente);
+        }else{
+          danger.style.opacity = 1;
+          $(".dangerAlert").html(
+            `<h2>` + "Eres menor, no calificas para recibir un prestamo." + `</h2>`
+          );
+        }
+  
+      }else{
+        
+        danger.style.opacity = 1;
+        $(".dangerAlert").html(
+          `<h2>` + "El plazo minimo es de 6 meses." + `</h2>`
+        );
+      }
+    
+    }else{
+      
+      danger.style.opacity = 1;
+      $(".dangerAlert").html(
+        `<h2>` + "El monto ingresado debe ser mayor a 3000$" + `</h2>`
+      ); 
+    }
+  
+  }else{
+    
+    danger.style.opacity = 1;
+    $(".dangerAlert").html(
+        `<h2>` + "Acepte los terminos y condiciones." + `</h2>`
+      );
+  }
+  
+  
+  let interes = 1 + (cuota * 6.00033) / 100;
+
+  let costoFinal = monto * interes * 1.21;
+
+  let cuotaPrestamo = costoFinal / cuota;
+
   $(".alert").append(`<p>Tu cuota mensual es de ${cuotaPrestamo} $</p>`);
-  $(".alert").append(`<p>El costo total de tu prestamo es de ${costoFinal} $</p>`);
-  
+  $(".alert").append(
+    `<p>El costo total de tu prestamo es de ${costoFinal} $</p>`
+  );
 });
 
 buttons[1].addEventListener("click", () => {
@@ -82,6 +106,7 @@ buttons[1].addEventListener("click", () => {
 // Funciones
 function showAlerta(nuevoCliente) {
 
+
   $(".alert").html(`<h2>FELICITACIONES</h2>
   <p>Nombre</p>
   <p>Apellido</p>
@@ -90,7 +115,7 @@ function showAlerta(nuevoCliente) {
   <p>Cuotas</p>
   <p>documento</p>
   <p>Email</p>
-  <p>Telefono</p>
+  
 
   <button class="btn" id="btn0">Cerrar</button>`);
 
@@ -109,6 +134,9 @@ function displayDolar() {
   $.get(urlDolar, function (datos) {
     let dolarOfCompra;
     let dolarOfVenta;
+    let dolarBlueVenta;
+    let dolarBlueCompra;
+
     for (let i = 0; i < datos.length; i++) {
       for (let valor in datos[i]) {
         dolarOfCompra = datos[0][valor]["compra"];
@@ -117,16 +145,16 @@ function displayDolar() {
         dolarBlueCompra = datos[1][valor]["compra"];
       }
     }
-    
 
     $(".DC").html("Dolar oficial compra: " + dolarOfCompra);
     $(".DV").html("Dolar oficial venta: " + dolarOfVenta);
     $(".DVb").html("Dolar Blue venta: " + dolarBlueVenta);
     $(".DCb").html("Dolar Blue compra: " + dolarBlueCompra);
   });
-};
+}
 displayDolar();
 // calculador de prestamo
 function calcularPrestamo() {}
 $(".btn").click(calcularPrestamo());
+
 
